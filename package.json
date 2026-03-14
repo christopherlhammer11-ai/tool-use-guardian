@@ -1,0 +1,29 @@
+{
+  "name": "tool-use-guardian",
+  "version": "0.1.0",
+  "description": "Intelligent tool-call reliability wrapper for LLM agents. Retries, timeouts, JSON repair, error recovery.",
+  "main": "dist/index.js",
+  "types": "dist/index.d.ts",
+  "scripts": {
+    "build": "tsc",
+    "test": "jest --forceExit",
+    "prepublishOnly": "npm run build && npm test"
+  },
+  "keywords": ["llm", "tool-use", "reliability", "retry", "agent", "genesis-marketplace"],
+  "author": "christopherlhammer11-ai",
+  "license": "MIT",
+  "repository": {
+    "type": "git",
+    "url": "https://github.com/christopherlhammer11-ai/tool-use-guardian"
+  },
+  "files": ["dist", "README.md"],
+  "engines": { "node": ">=18" },
+  "devDependencies": {
+    "@types/jest": "^29.5.12",
+    "@types/node": "^20.14.0",
+    "jest": "^29.7.0",
+    "ts-jest": "^29.1.4",
+    "ts-node": "^10.9.2",
+    "typescript": "^5.5.0"
+  }
+}
