@@ -119,7 +119,10 @@ export async function guardJson<T = unknown>(
 
 function withTimeout<T>(fn: () => Promise<T>, ms: number): Promise<T> {
   return new Promise((resolve, reject) => {
-    const timer = setTimeout(() => reject(new Error(`Timeout after ${ms}ms`)), ms);
+    const timer = setTimeout(() => {
+      reject(new Error(`Timeout after ${ms}ms`));
+    }, ms);
+    timer.unref?.();
 
     fn().then(
       (val) => { clearTimeout(timer); resolve(val); },
@@ -129,5 +132,8 @@ function withTimeout<T>(fn: () => Promise<T>, ms: number): Promise<T> {
 }
 
 function sleep(ms: number): Promise<void> {
-  return new Promise(resolve => setTimeout(resolve, ms));
+  return new Promise(resolve => {
+    const timer = setTimeout(resolve, ms);
+    timer.unref?.();
+  });
 }

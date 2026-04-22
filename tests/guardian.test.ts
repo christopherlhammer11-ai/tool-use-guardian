@@ -36,7 +36,7 @@ describe('guard', () => {
 
   it('times out slow functions', async () => {
     const result = await guard(
-      () => new Promise(resolve => setTimeout(() => resolve('late'), 5000)),
+      () => new Promise<string>(() => undefined),
       { timeout: 50, retries: 0 },
     );
 
