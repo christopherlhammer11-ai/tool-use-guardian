@@ -2,7 +2,7 @@
 
 **Reliability wrapper for AI tool calls.** Tool Use Guardian wraps brittle API/tool calls with retries, timeouts, JSON repair, and structured failure metadata.
 
-Demo: **Watch the demo:** [Tool-Use Guardian](https://christopherhammer.dev/assets/videos/narrated/project-demos/tool-use-guardian-narrated.mp4)
+**Demo:** [Tool-Use Guardian](https://christopherhammer.dev/assets/videos/narrated/project-demos/tool-use-guardian-narrated.mp4)
 
 ## Who Uses It
 
